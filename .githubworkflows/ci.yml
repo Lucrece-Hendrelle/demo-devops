@@ -1,25 +1,20 @@
-name: Deploy HTML Website
+name: CI Test + Docker Build
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout du dépôt
+      uses: actions/checkout@v3
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.0.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /www/mon-site
-          dry-run: false
+    - name: Test simple
+      run: echo "CI exécuté avec succès !"
+
+    - name: Build Docker image
+      run: docker build -t demo-devops .
