@@ -1,4 +1,4 @@
-name: CI Test + Docker Build
+name: CI - Build Docker Image
 
 on:
   push:
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout du dépôt
-      uses: actions/checkout@v3
+      - name: Checkout du code
+        uses: actions/checkout@v3
 
-    - name: Build Docker image (force no cache)
-      run: docker build --no-cache -t demo-devops .
+      - name: Build Docker image (sans cache)
+        run: docker build --no-cache -t demo-devops .
