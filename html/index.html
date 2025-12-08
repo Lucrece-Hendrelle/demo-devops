@@ -1,9 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Test DevOps</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet DevOps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #78CCD0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+            text-align: center;
+            max-width: 600px;
+        }
+        .container {
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #fff;
+            color: #78CCD0;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        a:hover {
+            background: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue dans votre université: le college de Paris au Gabon sur Libreville</h1>
+    <div class="container">
+        <h1>Mon Projet DevOps</h1>
+        <p>Cette application web est déployée automatiquement avec Docker et gérée via Terraform. Cela montre comment l’infrastructure et les conteneurs peuvent être provisionnés de manière automatisée.</p>
+        <a href="#">En savoir plus</a>
+    </div>
 </body>
 </html>
