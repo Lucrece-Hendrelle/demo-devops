@@ -1,4 +1,4 @@
-name: Deploy HTML Website
+name: CD - Deploy Dockerized App
 
 on:
   push:
@@ -11,16 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout du code
         uses: actions/checkout@v3
 
-      - name: Build Docker image
-        run: docker build -t demo-devops .
-
-      - name: Build Docker image (force no cache)
+      - name: Build Docker image (sans cache)
         run: docker build --no-cache -t demo-devops .
-
-        
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.0.0
